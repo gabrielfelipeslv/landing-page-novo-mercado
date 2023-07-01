@@ -9,9 +9,11 @@ document.querySelectorAll('#container-topicos .pergunta').forEach(function(x){
             x.nextElementSibling.style.height = `${x.nextElementSibling.scrollHeight + 16}px`;
         }
     });
-    if(duvida.classList.contains('ativa')){
-        x.nextElementSibling.style.height = `${x.nextElementSibling.scrollHeight}px`;
-    }else{
-        x.nextElementSibling.style.height = '0';
-    }
+    setTimeout(function(){
+        if(duvida.classList.contains('ativa')){
+            x.nextElementSibling.style.height = `${x.nextElementSibling.scrollHeight}px`;
+        }else{
+            x.nextElementSibling.style.height = '0';
+        }
+    }, 1000);
 });

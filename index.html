@@ -24,6 +24,9 @@
   <link rel="stylesheet" href="src/css/style.css">
 </head>
 <body class="landing">
+  <div class="container-bussola-background">
+    <img src="src/img/bussola-background.png" alt="Bússula ilustrativa no topo da página" id="bussola-landing">
+  </div>
   <header>
     <img src="src/img/header/logo-empresa.png" alt="Logo da empresa: O Novo Mercado" title="Empresa: O Novo Mercado">
     <img src="src/img/header/logo-curso.png" alt="Logo do curso: Gestor de Marketing Digital" title="Curso: Gestor de Marketing Digital">
@@ -34,7 +37,7 @@
         <b>Assista ao vídeo</b> abaixo que preparei para tirar <b>todas as suas dúvidas</b> sobre a Formação.
       </h1>
       <div id="video-placeholder"></div>
-      <button id="btn-inscricao">
+      <button class="btn-inscricao">
         QUERO GARANTIR MINHA VAGA NA FORMAÇÃO
       </button>
     </section>
@@ -249,12 +252,42 @@
           </ul>
         </div>
         <div id="valores">
-
+          <img src="src/img/landing/itens-diversos.png" alt="Itens diversos envolvidos no curso" title="Itens diversos envolvidos no curso">
+          <div id="preco-cortado">
+            De R$3.997
+          </div>
+          <p>
+            Por apenas 10x de <b>R$349,70</b> ou R$2.997 à vista.
+          </p>
+          <button class="btn-inscricao">
+            QUERO GARANTIR A MINHA VAGA AGORA
+          </button>
         </div>
       </div>
     </section>
   </main>
   <footer>
+    <div class="detalhes-garantia">
+      <img src="src/img/footer/bussola.png" alt="Imagem de uma bússola" title="Nossa bússola">
+      <div>
+        <h2>
+          GARANTIA INCONDICIONAL DE 7 DIAS
+        </h2>
+        <p>
+          Você pode entrar, acessar o conteúdo e, se não se adaptar, entender que não é para você ou até mesmo se arrepender nos primeiros 7 dias, devolvemos 100% do dinheiro investido. Simples assim, sem complicação ou letras miúdas.
+        </p>
+      </div>
+    </div>
+    <div class="instrucoes-contato">
+      <img src="src/img/footer/icone-whatsapp.png" alt="Ícone do WhatsApp" title="Fale com nossa equipe pelo WhatsApp">
+      <div class="complemento-contato">
+        <p>ALGUMA DÚVIDA NA HORA DE FAZER A SUA INSCRIÇÃO?</p>
+        <p>Envie uma mensagem para a nossa equipe clicando no botão no canto da página.</p>
+        <a href="https://wa.me/5513996608684" target="_blank" title="Abrir conversa no WhatsApp com nossa equipe de atendimento" class="link-whatsapp">
+          Clique aqui para acessar
+        </a>
+      </div>
+    </div>
     <script src="src/js/script.js"></script>
   </footer>
 </body>

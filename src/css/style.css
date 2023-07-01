@@ -6,12 +6,15 @@
     --tema-blue: #0070DF;
     --tema-blue-hover: #0050BF;
     --tema-red: #EE1B5A;
+    --tema-orange: #FF2828;
     --tema-green: #11A61F;
+    --tema-green-hover: #009600;
     --tema-black: #000000;
     --tema-semi-black: #212121;
     --tema-black-contatos: #0D0D0D;
     --tema-grey: #8E8E8E;
     --background-cards: #FFFFFF;
+    --max-width-responsive: 100%;
 }
 body{
     background: #F0F0F0;
@@ -29,6 +32,9 @@ ul{
 li{
     list-style: none;
 }
+a, button{
+    cursor: pointer;
+}
 header{
     display: flex;
     flex-direction: column;
@@ -43,9 +49,21 @@ header img{
     margin-top: 94px;
     margin-bottom: 52px;
 }
+.landing header img:first-child{
+    max-width: 224px;
+}
+.landing header img:last-child{
+    max-width: 349px;
+}
 .obrigado header{
     margin-top: 53px;
     margin-bottom: 40px;
+}
+.landing header img:first-child{
+    max-width: 206px;
+}
+.landing header img:last-child{
+    max-width: 221px;
 }
 main{
     width: 100%;
@@ -68,7 +86,7 @@ h1{
 .obrigado h1{
 
 }
-#btn-inscricao{
+.btn-inscricao{
     background: var(--tema-blue);
     color: #FFF;
     font-size: 16px;
@@ -79,7 +97,7 @@ h1{
     margin: 34px auto 0;
     border-radius: 5px;
 }
-#btn-inscricao:hover{
+.btn-inscricao:hover{
     background: var(--tema-blue-hover);
 }
 h2{
@@ -90,6 +108,7 @@ h2{
 #duvidas h2{
     line-height: 93.4%;
     margin: 0 auto 16px;
+    width: 60%;
 }
 #duvidas > p{
     max-width: 300px;
@@ -111,6 +130,7 @@ h2{
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    cursor: pointer;
 }
 .pergunta p{
     color: var(--tema-blue);
@@ -133,7 +153,7 @@ h2{
     border-top: 1px solid var(--tema-blue);
     color: var(--tema-semi-black);
     line-height: 130%;
-    letter-spacing: 0;
+    letter-spacing: 0.32px;
     opacity: .7;
     transition: .6s ease-out;
 }
@@ -200,9 +220,124 @@ h2{
     color: #767676;
     font-size: 17px;
 }
+#valores > img{
+    width: 90%;
+    display: block;
+    margin: 25px auto 10px;
+}
+#preco-cortado{
+    width: fit-content;
+    position: relative;
+    margin: 10px auto 25px;
+    font-size: 26px;
+    line-height: 130%;
+    color: var(--tema-orange);
+    display: flex;
+}
+#preco-cortado:after{
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 120%;
+    align-self: center;
+    left: -10%;
+    right: 0;
+    background: var(--tema-orange);
+    transform-origin: center;
+    transform: rotate(4deg);
+}
+#valores p{
+    font-size: 20px;
+    line-height: 130%;
+    margin: 0;
+}
+#valores p b{
+    display: block;
+    color: var(--tema-blue);
+    font-size: 65px;
+    word-break: break-word;
+    line-height: 130%;
+}
+#valores .btn-inscricao{
+    font-size: 14px;
+    width: 95%;
+    padding: 28px 20px;
+}
 footer{
+    margin-top: 28px;
     border-top: 10px solid #64CFF6;
+    background: var(--background-cards);
     width: 100%;
+}
+footer .detalhes-garantia img{
+    width: 50%;
+    display: block;
+    margin: 75px auto 20px;
+}
+footer .detalhes-garantia h2{
+    font-size: 28px;
+    color: var(--tema-red);
+    font-weight: 700;
+    padding: 0 20%;
+}
+footer .detalhes-garantia p{
+    padding: 0 48px;
+    font-size: 20px;
+    letter-spacing: 0.4px;
+    line-height: 130%;
+    text-align: center;
+    color: var(--tema-semi-black);
+    opacity: .7;
+    margin: 0 0 50px;
+}
+.instrucoes-contato{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 0 40px 40px 50px;
+    text-align: center;
+}
+.instrucoes-contato img{
+    width: 40px;
+    align-self: baseline;
+    display: block;
+}
+.instrucoes-contato .complemento-contato{
+    flex: 1;
+}
+.instrucoes-contato .complemento-contato p:first-child{
+    font-size: 18px;
+    color: var(--tema-black);
+    font-weight: 700;
+    line-height: 110%;
+    margin: 0 0 10px;
+}
+.instrucoes-contato .complemento-contato p:not(p:first-child){
+    font-size: 14px;
+    color: var(--tema-semi-black);
+    font-weight: 500;
+    line-height: 130%;
+    opacity: .7;
+    margin: 0;
+}
+.link-whatsapp{
+    outline: none;
+    background: var(--tema-green);
+    color: #FFF;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: 0.28px;
+    width: 80%;
+    padding: 8px 20px;
+    border-radius: 2px;
+    display: block;
+    text-decoration: none;
+    margin: 15px auto 0;
+}
+.link-whatsapp:hover{
+    background: var(--tema-green-hover);
 }
 #video-placeholder{
     aspect-ratio: 16/9;
@@ -210,12 +345,70 @@ footer{
     display: block;
     background-color: #333333;
 }
+.container-bussola-background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+.container-bussola-background *{
+    pointer-events: none;
+}
+#bussola-landing{
+    position: absolute;
+    width: 120%;
+    z-index: 9;
+    top: 0;
+    right: 0;
+    transform: translate(41%, -50%);
+}
 
-@media(max-width: 680px){
+header, main, footer > *{
+    position: relative;
+    max-width: var(--max-width-responsive);
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 10;
+    width: 100%;
+}
+
+@media(max-width: 319px){
+}
+@media(min-width: 320px){
+}
+@media(min-width: 425px){
+}
+@media(min-width: 680px){
     #duvidas h2{
-        width: 60%;
+        width: 100%;
+    }
+    :root{
+        --max-width-responsive: calc(100vw - 200px);
+    }
+    #bussola-landing{
+        width: calc(((100vw - 200px) * 0.45) + 200px);
+        max-width: 830px;
+        top: 20px;
+        transform: none;
+     }
+}
+@media(min-width: 768px){
+}
+@media(min-width: 1024px){
+    .landing h1{
+        width: 45%;
     }
 }
+@media(min-width: 1201px){
+    :root{
+        --max-width-responsive: 1092px;
+    }
+}
+
+
 @font-face {
     font-family: 'Paralucent';
     font-style: normal;
