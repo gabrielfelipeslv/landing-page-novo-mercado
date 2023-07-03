@@ -14,7 +14,8 @@
     --tema-black-contatos: #0D0D0D;
     --tema-grey: #8E8E8E;
     --background-cards: #FFFFFF;
-    --max-width-responsive: 100%;
+    --max-width-responsive-landing: 100%;
+    --max-width-responsive-obrigado: 100%;
 }
 body{
     background: #F0F0F0;
@@ -71,7 +72,7 @@ header img{
     max-width: 224px;
 }
 .obrigado header{
-    margin-top: 53px;
+    padding-top: 53px;
     margin-bottom: 40px;
 }
 .obrigado header img:first-child{
@@ -99,7 +100,14 @@ h1{
     margin: 0 auto 34px;
 }
 .obrigado h1{
-
+    text-align: center;
+    font-size: 43px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%;
+    background: -webkit-linear-gradient(0deg, #E77C1A, #EF4580);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 .btn-inscricao{
     background: var(--tema-blue);
@@ -390,11 +398,19 @@ footer{
 
 header, main, footer > *{
     position: relative;
-    max-width: var(--max-width-responsive);
     margin-left: auto;
     margin-right: auto;
     z-index: 10;
     width: 100%;
+}
+
+
+.landing header, .landing  main, .landing footer > *{
+    max-width: var(--max-width-responsive-landing);
+}
+
+.obrigado header, .obrigado  main, .obrigado footer > *{
+    max-width: var(--max-width-responsive-obrigado);
 }
 
 #container-pop-up{
@@ -535,23 +551,28 @@ header, main, footer > *{
         width: 100%;
     }
     :root{
-        --max-width-responsive: calc(100vw - 200px);
+        --max-width-responsive-landing: calc(100vw - 200px);
+        --max-width-responsive-obrigado: calc(100vw - 200px);
     }
 }
 @media(min-width: 768px){
-    .container-bussola-background{
+    body.landing .container-bussola-background{
         overflow: unset;
     }
-    #bussola-landing{
+    body.obrigado #bussola-landing{
+        width: calc(((100vw) * 0.6));
+        max-width: 1280px;
+    }
+    body.landing #bussola-landing{
         width: calc(((100vw - 200px) * 0.45) + 200px);
         max-width: 830px;
-        top: 20px;
         transform: none;
+        top: 20px;
     }
     #detalhes-garantia{
         justify-content: center;
         display: flex;
-        width: calc(var(--max-width-responsive) * .75);
+        width: calc(var(--max-width-responsive-landing) * .75);
     }
     #detalhes-garantia img{
         width: 200px;
@@ -609,7 +630,7 @@ header, main, footer > *{
         width: 45%;
     }
     header{
-        width: calc(var(--max-width-responsive) * .45);
+        width: calc(var(--max-width-responsive-landing) * .45);
         flex-direction: row-reverse;
         justify-content: center;
         gap: 60px;
@@ -656,7 +677,8 @@ header, main, footer > *{
         font-size: 100px;
     }
     :root{
-        --max-width-responsive: 1092px;
+        --max-width-responsive-landing: 1092px;
+        --max-width-responsive-obrigado: 760px;
     }
 }
 @media(min-width: 2200px){
@@ -666,7 +688,8 @@ header, main, footer > *{
         width: auto;
     }
     :root{
-        --max-width-responsive: 1600px;
+        --max-width-responsive-landing: 1600px;
+        --max-width-responsive-obrigado: 1100px;
     }
 }
 
