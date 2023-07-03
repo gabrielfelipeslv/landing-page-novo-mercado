@@ -20,6 +20,21 @@ body{
     background: #F0F0F0;
     margin: 0;
     padding: 0;
+    position: relative;
+}
+body.sombra-total{
+    overflow: hidden;
+}
+body.sombra-total:after{
+    content: '';
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    background: rgba(0, 0, 0, .3);
 }
 button{
     border: none;
@@ -46,24 +61,24 @@ header img{
     width: 33.33%;
 }
 .landing header{
-    margin-top: 94px;
+    padding-top: 94px;
     margin-bottom: 52px;
 }
 .landing header img:first-child{
-    max-width: 224px;
+    max-width: 349px;
 }
 .landing header img:last-child{
-    max-width: 349px;
+    max-width: 224px;
 }
 .obrigado header{
     margin-top: 53px;
     margin-bottom: 40px;
 }
-.landing header img:first-child{
-    max-width: 206px;
-}
-.landing header img:last-child{
+.obrigado header img:first-child{
     max-width: 221px;
+}
+.obrigado header img:last-child{
+    max-width: 206px;
 }
 main{
     width: 100%;
@@ -149,13 +164,15 @@ h2{
 }
 .resposta{
     margin-top: 16px;
-    padding-top: 16px;
     border-top: 1px solid var(--tema-blue);
     color: var(--tema-semi-black);
     line-height: 130%;
     letter-spacing: 0.32px;
     opacity: .7;
     transition: .6s ease-out;
+}
+.resposta > div{
+    padding-top: 16px;
 }
 .duvida:not(.ativa) .resposta{
     height: 0;
@@ -269,18 +286,22 @@ footer{
     background: var(--background-cards);
     width: 100%;
 }
-footer .detalhes-garantia img{
-    width: 50%;
-    display: block;
-    margin: 75px auto 20px;
+#detalhes-garantia{
+    margin-top: 75px;
 }
-footer .detalhes-garantia h2{
+#detalhes-garantia img{
+    width: 50%;
+    max-width: 150px;
+    display: block;
+    margin: 0 auto 20px;
+}
+#detalhes-garantia h2{
     font-size: 28px;
     color: var(--tema-red);
     font-weight: 700;
     padding: 0 20%;
 }
-footer .detalhes-garantia p{
+#detalhes-garantia p{
     padding: 0 48px;
     font-size: 20px;
     letter-spacing: 0.4px;
@@ -339,6 +360,7 @@ footer .detalhes-garantia p{
 .link-whatsapp:hover{
     background: var(--tema-green-hover);
 }
+
 #video-placeholder{
     aspect-ratio: 16/9;
     width: 100%;
@@ -375,6 +397,133 @@ header, main, footer > *{
     width: 100%;
 }
 
+#container-pop-up{
+    position: fixed;
+    top: 200%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    z-index: 99;
+    transition: .5s all ease;
+}
+
+#container-pop-up.show{
+    top: 0;
+}
+
+#pop-up-formulario{
+    margin-top: 0;
+    display: block;
+    background: #F0F0F0;
+    padding: 18px 25px 32px;
+    max-width: 730px;
+    width: 90vw;
+    z-index: 100;
+}
+
+#pop-up-formulario p{
+    color: #8E8E8E;
+    text-align: center;
+    line-height: 120%;
+    font-weight: 500;
+    margin: 0;
+}
+
+#pop-up-formulario p:first-child{
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+#pop-up-formulario p:nth-child(2){
+    color: #EE1B5A;
+    font-size: 19px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+#pop-up-formulario p:last-of-type{
+    font-size: 10px;
+    margin-bottom: 8px;
+}
+
+.campos div:not(.aviso-input-invalido){
+    position: relative;
+    margin: 0 auto;
+}
+.campos label{
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    width: 35px;
+    padding-left: 5px;
+}
+.campos label svg{
+    width: 100%;
+    height: auto;
+}
+.campos input{
+    padding: 10px 16px 10px 40px;
+    color: #888;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 20px;
+    letter-spacing: 0.14px;
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, .3);
+}
+.aviso-input-invalido{
+    display: block;
+    font-size: 10px;
+    color: var(--tema-red);
+    font-weight: 600;
+    margin: 3px auto 10px;
+    pointer-events: none;
+    opacity: 0;
+}
+.campos div.input-invalido input{
+    border: 1px solid var(--tema-red);
+}
+.campos div.input-invalido + .aviso-input-invalido{
+    opacity: 1;
+    animation: destacar-erro-input .5s forwards ease-in-out;
+}
+
+@keyframes destacar-erro-input{
+    0%{
+        padding-left: 0;
+    }
+    50%{
+        padding-left: 20px;
+    }
+    100%{
+        padding-left: 0;
+    }
+}
+
+#pop-up-formulario button{
+    display: block;
+    margin: auto;
+    width: 100%;
+    color: #FFF;
+    text-align: center;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 110%;
+    letter-spacing: 0.38px;
+    border-radius: 2px;
+    padding: 9px 40px;
+    background: var(--tema-blue);
+}
+#pop-up-formulario button:hover{
+    background: var(--tema-blue-hover);
+}
+
 @media(max-width: 319px){
 }
 @media(min-width: 320px){
@@ -388,23 +537,133 @@ header, main, footer > *{
     :root{
         --max-width-responsive: calc(100vw - 200px);
     }
+}
+@media(min-width: 768px){
+    .container-bussola-background{
+        overflow: unset;
+    }
     #bussola-landing{
         width: calc(((100vw - 200px) * 0.45) + 200px);
         max-width: 830px;
         top: 20px;
         transform: none;
-     }
-}
-@media(min-width: 768px){
+    }
+    #detalhes-garantia{
+        justify-content: center;
+        display: flex;
+        width: calc(var(--max-width-responsive) * .75);
+    }
+    #detalhes-garantia img{
+        width: 200px;
+        max-width: 200px;
+        align-self: baseline;
+        margin: 0;
+    }
+    #detalhes-garantia div{
+        flex: 1;
+        margin-left: 23px;
+        max-width: 525px;
+    }
+    #detalhes-garantia div > *{
+        text-align: left;
+        padding: 0;
+        margin-top: 0;
+    }
+    #pop-up-formulario {
+        padding: 45px 120px;
+    }
+    #pop-up-formulario p:first-child{
+        font-size: 20px;
+        margin-bottom: 16px;
+    }
+    #pop-up-formulario p:nth-child(2){
+        font-size: 28px;
+        margin-bottom: 24px;
+    }
+    #pop-up-formulario p:last-of-type{
+        font-size: 14px;
+        margin: 16px 0;
+    }
+    .campos div{
+        max-width: 388px;
+    }
+    #pop-up-formulario button{
+        max-width: 500px;
+    }
 }
 @media(min-width: 1024px){
+    #introducao .btn-inscricao{
+        font-size: 20px;
+        padding: 15px;
+        max-width: 465px;
+    }
+    .duvida{
+        padding: 16px 32px;
+    }
+    #valores .btn-inscricao{
+        font-size: 20px;
+        padding: 26px 35px;
+        max-width: 465px;
+    }
     .landing h1{
         width: 45%;
+    }
+    header{
+        width: calc(var(--max-width-responsive) * .45);
+        flex-direction: row-reverse;
+        justify-content: center;
+        gap: 60px;
+    }
+    header img{
+        width: unset;
+        flex: 1;
+    }
+    #container-detalhes{
+        display: flex;
+        justify-content: space-between;
+        padding: 55px 60px 45px;
+        gap: 70px;
+    }
+    #beneficios{
+        width: 39%;
+    }
+    #beneficios h2{
+        font-size: 24px;
+    }
+    #valores{
+        flex: 1;
+    }
+    #preco-cortado{
+        font-size: 36px;
+    }
+    #valores p{
+        font-size: 28px;
+    }
+    #valores p b{
+        font-size: 100px;
+    }
+    .instrucoes-contato img{
+        width: 48px;
+        height: 48px;
+    }
+    .instrucoes-contato{
+        max-width: 360px;
+        padding: 0 0 40px 0;
     }
 }
 @media(min-width: 1201px){
     :root{
         --max-width-responsive: 1092px;
+    }
+}
+@media(min-width: 2200px){
+    #bussola-landing{
+        max-width: unset;
+        height: 80vh;
+        width: auto;
+    }
+    :root{
+        --max-width-responsive: 1600px;
     }
 }
 
