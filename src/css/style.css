@@ -640,7 +640,7 @@ header, main, footer > *{
         font-size: 28px;
     }
     #valores p b{
-        font-size: 100px;
+        font-size: 70px;
     }
     .instrucoes-contato img{
         width: 48px;
@@ -652,6 +652,9 @@ header, main, footer > *{
     }
 }
 @media(min-width: 1201px){
+    #valores p b {
+        font-size: 100px;
+    }
     :root{
         --max-width-responsive: 1092px;
     }
