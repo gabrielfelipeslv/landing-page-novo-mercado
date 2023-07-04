@@ -34,7 +34,7 @@ session_start();
     <img src="src/img/bussola-background.png" alt="Bússula ilustrativa no topo da página" id="bussola-landing">
 </div>
 <div id="container-pop-up">
-    <form id="pop-up-formulario" action="pre-obrigado.php" method="post">
+    <form id="pop-up-formulario" action="pre-obrigado" method="post">
         <p>Falta pouco para você dar início na sua jornada como Gestor de Marketing Digital e se tornar o profissional mais importante do mercado digital.</p>
         <p>Preencha os dados abaixo para prosseguir com sua inscrição.</p>
         <div class="campos">
