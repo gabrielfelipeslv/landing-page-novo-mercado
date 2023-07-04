@@ -50,6 +50,11 @@ duvidas.forEach(function(x){
             duvida.classList.remove('ativa');
             x.nextElementSibling.style.height = '0';
         }else{
+            const duvidaAberta = document.querySelector('.duvida.ativa');
+            if(duvidaAberta){
+                duvidaAberta.classList.remove('ativa');
+                duvidaAberta.querySelector('.resposta').style.height = '0';
+            }
             duvida.classList.add('ativa');
             x.nextElementSibling.style.height = `${x.nextElementSibling.scrollHeight}px`;
         }

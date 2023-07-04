@@ -74,12 +74,17 @@ header img{
 .obrigado header{
     padding-top: 53px;
     margin-bottom: 40px;
+    align-items: flex-start;
+    padding-left: 30px;
+}
+.obrigado header img{
+    width: 100%;
 }
 .obrigado header img:first-child{
-    max-width: 221px;
+    max-width: 164px;
 }
 .obrigado header img:last-child{
-    max-width: 206px;
+    max-width: 220px;
 }
 main{
     width: 100%;
@@ -101,13 +106,26 @@ h1{
 }
 .obrigado h1{
     text-align: center;
-    font-size: 43px;
+    font-size: 28px;
     font-style: normal;
     font-weight: 700;
     line-height: 110%;
     background: -webkit-linear-gradient(0deg, #E77C1A, #EF4580);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+.obrigado main{
+    padding: 0 15px;
+}
+.obrigado main p{
+    color: #8E8E8E;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 130%;
+}
+.obrigado main p.texto-pre-video{
+    color: var(--tema-blue);
 }
 .btn-inscricao{
     background: var(--tema-blue);
@@ -370,11 +388,18 @@ footer{
 }
 
 #video-placeholder{
-    aspect-ratio: 16/9;
-    width: 100%;
-    display: block;
-    background-color: #333333;
+    position: relative;
+    padding-bottom: 56.25%;
 }
+
+#video-placeholder iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
 .container-bussola-background{
     position: absolute;
     top: 0;
@@ -394,6 +419,158 @@ footer{
     top: 0;
     right: 0;
     transform: translate(41%, -50%);
+}
+.obrigado #bussola-landing{
+    width: 100%;
+}
+
+#bussola-lateral{
+    position: absolute;
+    width: 120%;
+    z-index: 9;
+    top: 350px;
+    left: 0;
+}
+
+#manual-aluno img{
+    width: 90%;
+    max-width: 420px;
+    display: block;
+    margin: auto;
+}
+
+#manual-aluno div{
+    margin-top: -70px;
+    padding: 90px 5px 32px 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    border-radius: 6px;
+    background: var(--background-cards);
+}
+#manual-aluno div > *{
+    margin: 0;
+}
+#manual-aluno h2{
+    padding: 0 20px;
+}
+#manual-aluno p{
+    font-size: 18px;
+    letter-spacing: 0.36px;
+}
+#manual-aluno a{
+    width: 95%;
+    border-radius: 10px;
+    border: 3px solid var(--tema-blue);
+    background: var(--background-cards);
+    color: var(--tema-blue);
+    box-shadow: 0 6px 0 0 var(--tema-blue);
+    outline: none;
+    text-decoration: none;
+    padding: 20px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 110%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+#manual-aluno a:hover{
+    color: var(--background-cards);
+    background: var(--tema-blue);
+}
+#manual-aluno svg{
+    width: 32px;
+    margin-left: 5px;
+    fill: var(--tema-blue);
+}
+#manual-aluno a:hover svg{
+    fill: var(--background-cards);
+}
+
+.bussola-esquerda{
+    display: none;
+}
+
+.obrigado footer{
+    background: unset;
+    border-top: none;
+    padding: 0 16px;
+}
+
+.obrigado footer > *, #flex-contatos > div{
+    margin-bottom: 32px;
+}
+.obrigado footer #flex-contatos div{
+    padding: 0;
+}
+.obrigado .instrucoes-contato{
+    justify-content: center;
+}
+.obrigado .instrucoes-contato .complemento-contato{
+    flex: unset;
+    width: fit-content;
+}
+.obrigado footer #flex-contatos .instrucoes-contato:last-child img{
+    height: unset;
+}
+.obrigado .instrucoes-contato .complemento-contato p:first-child{
+    font-size: 24px;
+    text-align: left;
+}
+.obrigado .instrucoes-contato .complemento-contato p:not(p:first-child){
+    font-size: 17px;
+    text-align: left;
+}
+.obrigado .instrucoes-contato .complemento-contato a{
+    width: fit-content;
+    padding: 14px 24px;
+    margin-left: 0;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: 0.336px;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+.link-email{
+    outline: none;
+    background: var(--background-cards);
+    text-decoration: none;
+    display: block;
+    border: 1px solid rgba(197, 34, 31, 0.40);
+    color: #C5221F;
+}
+
+.link-email:hover{
+    background: #C5221F;
+    color: var(--background-cards);
+}
+
+#texto-contatos{
+    padding: 16px;
+    border-radius: 10px;
+    background: var(--background-cards);
+}
+
+#texto-contatos p:first-child{
+    color: var(--tema-blue);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 110%;
+    margin: 0 0 16px;
+}
+#texto-contatos p:last-child{
+    color: var(--tema-black);
+    font-size: 16px;
+    line-height: 130%;
+    letter-spacing: 0.32px;
+    margin: 0;
 }
 
 header, main, footer > *{
@@ -554,6 +731,9 @@ header, main, footer > *{
         --max-width-responsive-landing: calc(100vw - 200px);
         --max-width-responsive-obrigado: calc(100vw - 200px);
     }
+    .obrigado main {
+         padding: 0;
+    }
 }
 @media(min-width: 768px){
     body.landing .container-bussola-background{
@@ -613,6 +793,12 @@ header, main, footer > *{
     }
 }
 @media(min-width: 1024px){
+    .obrigado header img:first-child{
+        max-width: 221px;
+    }
+    .obrigado header img:last-child{
+        max-width: 206px;
+    }
     #introducao .btn-inscricao{
         font-size: 20px;
         padding: 15px;
@@ -628,6 +814,12 @@ header, main, footer > *{
     }
     .landing h1{
         width: 45%;
+    }
+    .obrigado h1 {
+        font-size: 43px;
+    }
+    .obrigado main p.texto-pre-video{
+        font-size: 28px;
     }
     header{
         width: calc(var(--max-width-responsive-landing) * .45);
@@ -667,18 +859,73 @@ header, main, footer > *{
         width: 48px;
         height: 48px;
     }
-    .instrucoes-contato{
+    .landing footer > .instrucoes-contato{
         max-width: 360px;
         padding: 0 0 40px 0;
     }
+    #flex-contatos{
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 15px;
+    }
+    #flex-contatos .instrucoes-contato{
+        width: 50%;
+        max-width: unset;
+    }
+    #flex-contatos .instrucoes-contato p:first-child{
+        font-size: 20px;
+    }
+    #flex-contatos .instrucoes-contato p:not(p:first-child){
+        font-size: 14px;
+    }
 }
 @media(min-width: 1201px){
+    .bussola-esquerda{
+        display: block;
+    }
+    #bussola-lateral{
+        width: calc(((100vw - 200px) * 0.45) + 200px);
+        max-width: 830px;
+    }
     #valores p b {
         font-size: 100px;
     }
     :root{
         --max-width-responsive-landing: 1092px;
         --max-width-responsive-obrigado: 760px;
+    }
+    #manual-aluno{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    #manual-aluno div{
+        padding: 34px 45px 57px;
+        margin-top: 10px;
+    }
+    .obrigado main h2{
+        font-size: 28px;
+    }
+    .obrigado #apresentacao p{
+        width: 75%;
+        display: block;
+        margin: 0 auto 50px;
+    }
+    #manual-aluno h2{
+        padding: 0;
+    }
+    #manual-aluno p{
+        width: 70%;
+        align-self: baseline;
+        margin: 16px 0;
+    }
+    #manual-aluno a{
+        width: 65%;
+        margin-left: unset;
+    }
+    #manual-aluno img {
+        margin-right: -210px;
+        position: relative;
+        margin-top: -200px;
     }
 }
 @media(min-width: 2200px){
